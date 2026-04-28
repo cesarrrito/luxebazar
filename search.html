@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Recherchez et découvrez des produits de luxe sur LuxeBazar - Électronique, maison, automobile">
+    <meta name="description" content="Boutique Le Lezard - Recherchez et découvrez des produits de luxe de dropshipping">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Boutique - LuxeBazar">
+    <meta property="og:title" content="Boutique - Le Lezard">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://luxebazar.vercel.app/search.html">
-    <title>Boutique | LuxeBazar</title>
+    <link rel="canonical" href="https://cesarrrito.github.io/lelezard">
+    <title>Boutique | Le Lezard</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
     <header class="nav-container">
-        <div class="logo">LUXEBAZAR</div>
+        <div class="logo">LE LEZARD</div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="search.html">Boutique</a></li>
-                <li><a href="electronics.html">Électronique</a></li>
-                <li><a href="home.html">Maison</a></li>
-                <li><a href="auto.html">Auto</a></li>
+                <li><a href="cart.html">Panier</a></li>
                 <li><a href="account.html">Compte</a></li>
             </ul>
         </nav>
@@ -60,7 +58,7 @@
                             <option value="">Toutes</option>
                             <option value="electronics">Électronique</option>
                             <option value="home">Maison</option>
-                            <option value="auto">Automobile</option>
+                            <option value="auto">Auto</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -125,7 +123,7 @@
                         <div class="product-info">
                             <span class="product-category">Auto</span>
                             <h3>Support Téléphone GPS</h3>
-                            <p class="product-description">Magnétique,360°, ventouse puissante</p>
+                            <p class="product-description">Magnétique, 360°, ventouse puissante</p>
                             <div class="product-rating">★★★★★</div>
                             <p class="current-price">44,99€</p>
                             <button class="btn-add-cart" onclick="addToCart('Support Téléphone GPS', 44.99)">Ajouter au panier</button>
@@ -260,7 +258,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>LUXEBAZAR</h4>
+                    <h4>LE LEZARD</h4>
                     <p>L'excellence du shopping luxe, accessible à tous.</p>
                 </div>
                 <div class="footer-col">
@@ -268,9 +266,8 @@
                     <ul>
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="search.html">Boutique</a></li>
-                        <li><a href="electronics.html">Électronique</a></li>
-                        <li><a href="home.html">Maison</a></li>
-                        <li><a href="auto.html">Auto</a></li>
+                        <li><a href="cart.html">Panier</a></li>
+                        <li><a href="account.html">Compte</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -285,20 +282,20 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li>support@luxebazar.com</li>
+                        <li>support@lelezard.com</li>
                         <li>+33 1 23 45 67 89</li>
                         <li>Paris, France</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 LuxeBazar. Tous droits réservés.</p>
+                <p>&copy; 2024 Le Lezard. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        let cart = JSON.parse(localStorage.getItem('luxebazar_cart')) || [];
+        let cart = JSON.parse(localStorage.getItem('lelezard_cart')) || [];
 
         function updateCartCount() {
             document.getElementById('cart-count').textContent = cart.length;
@@ -306,7 +303,7 @@
 
         function addToCart(name, price) {
             cart.push({ name, price, quantity: 1 });
-            localStorage.setItem('luxebazar_cart', JSON.stringify(cart));
+            localStorage.setItem('lelezard_cart', JSON.stringify(cart));
             updateCartCount();
             showNotification(`${name} ajouté au panier!`);
         }

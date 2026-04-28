@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.van-gogh-bg {
+.starry-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -16,32 +16,22 @@
     z-index: 0;
 }
 
-.van-gogh-bg svg {
+.starry-bg svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.van-gogh-bg .stars {
+.starry-bg .stars circle {
     animation: twinkle 3s ease-in-out infinite;
 }
 
-@keyframes twinkle {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
-
-.van-gogh-bg .cypress {
+.starry-bg .cypress {
     animation: sway 8s ease-in-out infinite;
     transform-origin: bottom center;
 }
 
-@keyframes sway {
-    0%, 100% { transform: rotate(-1deg); }
-    50% { transform: rotate(1deg); }
-}
-
-.van-gogh-bg .wheat-field path {
+.starry-bg .wheat-field path {
     animation: wave 4s ease-in-out infinite;
 }
 
@@ -93,46 +83,6 @@
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: var(--gold-primary);
-    font-size: 12px;
-    letter-spacing: 2px;
-    animation: float 2s ease-in-out infinite;
-}
-
-.mouse {
-    width: 26px;
-    height: 40px;
-    border: 2px solid var(--gold-primary);
-    border-radius: 13px;
-    position: relative;
-}
-
-.wheel {
-    width: 4px;
-    height: 8px;
-    background: var(--gold-primary);
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scroll 1.5s ease-in-out infinite;
-}
-
-@keyframes scroll {
-    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
 }
 
 .flash-sales {
@@ -303,66 +253,6 @@
     color: rgba(245, 240, 232, 0.6);
 }
 
-.categories-preview {
-    padding: 100px 0;
-    background: var(--navy-deep);
-}
-
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.category-card {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid rgba(201, 169, 98, 0.2);
-    transition: all 0.4s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--gold-primary);
-    box-shadow: 0 15px 35px rgba(201, 169, 98, 0.15);
-}
-
-.category-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 25px;
-}
-
-.category-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.category-card h3 {
-    font-size: 1.5rem;
-    color: var(--cream);
-    margin-bottom: 10px;
-}
-
-.category-card p {
-    font-size: 14px;
-    color: rgba(245, 240, 232, 0.6);
-    margin-bottom: 20px;
-}
-
-.category-arrow {
-    display: inline-block;
-    font-size: 1.5rem;
-    color: var(--gold-primary);
-    transition: transform 0.3s ease;
-}
-
-.category-card:hover .category-arrow {
-    transform: translateX(10px);
-}
-
 .about-section {
     padding: 100px 0;
     background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy-dark) 100%);
@@ -526,6 +416,51 @@
     font-size: 13px;
 }
 
+.sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.sakura-petal {
+    position: absolute;
+    top: -20px;
+    width: 15px;
+    height: 10px;
+    background: linear-gradient(135deg, #ffb7c5, #ffc0cb);
+    border-radius: 50% 0 50% 50%;
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(25vh) rotate(90deg) translateX(50px);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg) translateX(-30px);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateY(75vh) rotate(270deg) translateX(40px);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg) translateX(-20px);
+        opacity: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -570,10 +505,6 @@
 
     .products-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .categories-grid {
-        grid-template-columns: 1fr;
     }
 
     .newsletter-form {
