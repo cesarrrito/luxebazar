@@ -1,3 +1,66 @@
+.stars-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bg-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    animation: antiGravity 6s ease-in-out infinite, starSparkle 3s ease-in-out infinite;
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes starSparkle {
+    0%, 100% { 
+        opacity: 0.2;
+        filter: blur(0px);
+        transform: scale(1);
+        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.3);
+    }
+    25% { 
+        opacity: 1;
+        filter: blur(0.5px);
+        transform: scale(1.8);
+        box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.8);
+    }
+    50% { 
+        opacity: 0.5;
+        filter: blur(1px);
+        transform: scale(0.8);
+        box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.4);
+    }
+    75% { 
+        opacity: 0.9;
+        filter: blur(0.2px);
+        transform: scale(1.4);
+        box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes antiGravity {
+    0%, 100% { 
+        transform: translateY(0) scale(1); 
+    }
+    25% { 
+        transform: translateY(-20px) scale(1.3); 
+    }
+    50% { 
+        transform: translateY(-40px) scale(0.9); 
+    }
+    75% { 
+        transform: translateY(-20px) scale(1.2); 
+    }
+}
+
 .hero {
     position: relative;
     min-height: 100vh;
@@ -7,37 +70,41 @@
     overflow: hidden;
 }
 
-.starry-bg {
+.van-gogh-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
 }
 
-.starry-bg svg {
+.van-gogh-bg svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.starry-bg .stars circle {
-    animation: twinkle 3s ease-in-out infinite;
+.van-gogh-bg .moon {
+    animation: moonGlow 4s ease-in-out infinite;
 }
 
-.starry-bg .cypress {
+.van-gogh-bg .stars-main circle {
+    filter: url(#starFilter);
+}
+
+.van-gogh-bg .cypress {
     animation: sway 8s ease-in-out infinite;
     transform-origin: bottom center;
 }
 
-.starry-bg .wheat-field path {
-    animation: wave 4s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
+@keyframes moonGlow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 20px rgba(244, 208, 63, 0.4)) drop-shadow(0 0 40px rgba(244, 208, 63, 0.2));
+    }
+    50% { 
+        filter: drop-shadow(0 0 40px rgba(244, 208, 63, 0.7)) drop-shadow(0 0 80px rgba(244, 208, 63, 0.4));
+    }
 }
 
 .hero-content {
@@ -465,11 +532,9 @@
     .about-content {
         grid-template-columns: 1fr;
     }
-
     .about-image {
         order: -1;
     }
-
     .artwork-frame {
         max-width: 400px;
         margin: 0 auto;
@@ -480,41 +545,32 @@
     .hero-description {
         font-size: 16px;
     }
-
     .hero-cta {
         flex-direction: column;
         align-items: center;
     }
-
     .countdown-timer {
         flex-wrap: wrap;
     }
-
     .time-block {
         min-width: 70px;
         padding: 10px 15px;
     }
-
     .time-value {
         font-size: 2rem;
     }
-
     .about-features {
         grid-template-columns: 1fr;
     }
-
     .products-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
     .newsletter-form {
         flex-direction: column;
     }
-
     .newsletter-form input {
         width: 100%;
     }
-
     .container {
         padding: 0 20px;
     }

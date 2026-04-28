@@ -11,7 +11,7 @@
     <meta property="og:description" content="Découvrez notre collection exclusive de produits haut de gamme, inspiré par l'art de Van Gogh et la beauté des fleurs de cerisier.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <link rel="canonical" href="https://cesarrrito.github.io/luxebazar">
+    <link rel="canonical" href="https://cesarrrito.github.io/lelezard">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦎</text></svg>">
     <title>Le Lezard | Collection Exclusive de Produits de Luxe</title>
     <link rel="stylesheet" href="css/style.css">
@@ -20,6 +20,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
+    <div class="stars-bg" id="stars-bg"></div>
+
     <header class="nav-container">
         <div class="logo">LE LEZARD</div>
         <nav>
@@ -46,7 +48,7 @@
 
     <main>
         <section class="hero" id="hero-section">
-            <div class="starry-bg" id="starry-bg">
+            <div class="van-gogh-bg" id="van-gogh-bg">
                 <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" id="sky-svg">
                     <defs>
                         <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -55,101 +57,38 @@
                             <stop offset="70%" style="stop-color:#2d3a5c"/>
                             <stop offset="100%" style="stop-color:#4a5d7a"/>
                         </linearGradient>
-                        <linearGradient id="wheatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#c9a962"/>
-                            <stop offset="50%" style="stop-color:#e8d5a3"/>
-                            <stop offset="100%" style="stop-color:#8b7355"/>
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                        <filter id="starGlow">
-                            <feGaussianBlur stdDeviation="2" result="blur"/>
+                        <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#fffacd"/>
+                            <stop offset="70%" style="stop-color:#f9e79f"/>
+                            <stop offset="100%" style="stop-color:#f4d03f" stop-opacity="0"/>
+                        </radialGradient>
+                        <filter id="starFilter">
+                            <feGaussianBlur stdDeviation="1.5" result="blur"/>
                             <feMerge>
                                 <feMergeNode in="blur"/>
                                 <feMergeNode in="SourceGraphic"/>
                             </feMerge>
                         </filter>
+                        <filter id="moonFilter">
+                            <feGaussianBlur stdDeviation="3"/>
+                        </filter>
                     </defs>
                     <rect width="1920" height="1080" fill="url(#skyGrad)"/>
-                    <circle cx="1600" cy="150" r="80" fill="#f4d03f" opacity="0.3" filter="url(#glow)"/>
-                    <circle cx="1600" cy="150" r="60" fill="#f9e79f" opacity="0.5"/>
-                    <g class="stars" filter="url(#starGlow)">
-                        <circle cx="150" cy="80" r="2" fill="#fff" opacity="0.8"/>
-                        <circle cx="250" cy="120" r="1.5" fill="#fff" opacity="0.6"/>
-                        <circle cx="380" cy="60" r="2.5" fill="#fff" opacity="0.9"/>
-                        <circle cx="500" cy="140" r="1" fill="#fff" opacity="0.5"/>
-                        <circle cx="650" cy="90" r="1.8" fill="#fff" opacity="0.7"/>
-                        <circle cx="800" cy="50" r="2" fill="#fff" opacity="0.8"/>
-                        <circle cx="950" cy="130" r="1.2" fill="#fff" opacity="0.6"/>
-                        <circle cx="1100" cy="70" r="2.2" fill="#fff" opacity="0.9"/>
-                        <circle cx="1300" cy="110" r="1.5" fill="#fff" opacity="0.7"/>
-                        <circle cx="1450" cy="45" r="1.8" fill="#fff" opacity="0.8"/>
-                        <circle cx="100" cy="200" r="1.2" fill="#fff" opacity="0.5"/>
-                        <circle cx="300" cy="250" r="1.8" fill="#fff" opacity="0.7"/>
-                        <circle cx="450" cy="180" r="1" fill="#fff" opacity="0.6"/>
-                        <circle cx="600" cy="220" r="2" fill="#fff" opacity="0.8"/>
-                        <circle cx="750" cy="160" r="1.5" fill="#fff" opacity="0.5"/>
-                        <circle cx="900" cy="200" r="2.2" fill="#fff" opacity="0.9"/>
-                        <circle cx="1050" cy="150" r="1" fill="#fff" opacity="0.6"/>
-                        <circle cx="1200" cy="190" r="1.8" fill="#fff" opacity="0.7"/>
-                        <circle cx="1400" cy="170" r="1.5" fill="#fff" opacity="0.8"/>
-                        <circle cx="1800" cy="100" r="2" fill="#fff" opacity="0.7"/>
-                        <circle cx="1850" cy="180" r="1.5" fill="#fff" opacity="0.6"/>
-                        <circle cx="50" cy="150" r="1.8" fill="#fff" opacity="0.7"/>
-                    </g>
-                    <g class="cypress">
+                    
+                    <circle class="moon" cx="1650" cy="130" r="50" fill="#f9e79f" filter="url(#moonFilter)"/>
+                    <circle class="moon-inner" cx="1650" cy="130" r="35" fill="#fffacd"/>
+                    <circle cx="1650" cy="130" r="100" fill="url(#moonGlow)" opacity="0.3"/>
+                    
+                    <g class="stars-main" id="stars-main"></g>
+                    
+                    <g class="cypress" id="cypress-left">
                         <path d="M180 1080 Q200 800 190 600 Q185 400 200 200 Q205 150 195 100 Q190 150 195 200 Q210 400 205 600 Q195 800 180 1080" fill="#0d1b2a" opacity="0.9"/>
-                        <path d="M220 1080 Q245 820 235 640 Q225 460 240 260 Q250 180 235 120 Q225 180 230 260 Q245 460 240 640 Q230 820 220 1080" fill="#1b263b" opacity="0.7"/>
                     </g>
-                    <g class="cypress2">
-                        <path d="M1650 1080 Q1670 850 1660 680 Q1655 500 1665 350 Q1675 250 1660 180 Q1645 250 1655 350 Q1665 500 1660 680 Q1650 850 1650 1080" fill="#0d1b2a" opacity="0.9"/>
-                        <path d="M1700 1080 Q1725 880 1715 720 Q1705 560 1720 400 Q1735 280 1715 200 Q1695 280 1710 400 Q1720 560 1715 720 Q1705 880 1700 1080" fill="#1b263b" opacity="0.7"/>
+                    <g class="cypress" id="cypress-right">
+                        <path d="M1700 1080 Q1720 850 1710 680 Q1705 500 1715 350 Q1725 250 1710 180 Q1695 250 1705 350 Q1715 500 1710 680 Q1700 850 1700 1080" fill="#0d1b2a" opacity="0.9"/>
                     </g>
-                    <g class="wheat-field" id="wheat-field">
-                        <g class="wheat-layer-1">
-                            <path d="M0 750 Q50 740 100 750 Q150 760 200 750" stroke="#c9a962" stroke-width="2" fill="none"/>
-                            <path d="M50 760 Q80 720 100 680" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M100 755 Q130 710 145 665" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M150 760 Q175 700 185 645" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                            <path d="M200 750 Q230 700 245 650" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                        </g>
-                        <g class="wheat-layer-2">
-                            <path d="M200 780 Q280 770 360 780 Q440 790 520 780" stroke="#c9a962" stroke-width="2" fill="none"/>
-                            <path d="M280 790 Q320 740 340 690" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M360 785 Q400 730 420 680" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M440 790 Q475 725 490 670" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                            <path d="M520 780 Q560 730 580 680" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                        </g>
-                        <g class="wheat-layer-3">
-                            <path d="M500 800 Q600 790 700 800 Q800 810 900 800" stroke="#c9a962" stroke-width="2" fill="none"/>
-                            <path d="M600 810 Q650 760 670 710" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M700 805 Q745 745 760 690" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M800 810 Q840 745 855 685" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                        </g>
-                        <g class="wheat-layer-4">
-                            <path d="M850 820 Q950 810 1050 820 Q1150 830 1250 820" stroke="#c9a962" stroke-width="2" fill="none"/>
-                            <path d="M950 830 Q1000 780 1020 730" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M1050 825 Q1095 765 1110 705" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                            <path d="M1150 830 Q1190 765 1205 700" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                        </g>
-                        <g class="wheat-layer-5">
-                            <path d="M1200 840 Q1300 830 1400 840 Q1500 850 1600 840" stroke="#c9a962" stroke-width="2" fill="none"/>
-                            <path d="M1300 850 Q1350 795 1370 740" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M1400 845 Q1445 780 1460 720" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                            <path d="M1500 850 Q1540 785 1555 725" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                        </g>
-                        <g class="wheat-layer-6">
-                            <path d="M1550 860 Q1650 850 1750 860 Q1850 870 1920 860" stroke="#c9a962" stroke-width="2" fill="none"/>
-                            <path d="M1650 870 Q1700 815 1720 760" stroke="#c9a962" stroke-width="1.5" fill="none"/>
-                            <path d="M1750 865 Q1795 800 1810 740" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
-                        </g>
-                    </g>
-                    <ellipse cx="960" cy="950" rx="800" ry="150" fill="url(#wheatGrad)" opacity="0.4" id="ground-ellipse"/>
+                    
+                    <g class="wheat-field" id="wheat-field"></g>
                 </svg>
             </div>
             <div class="hero-content">
@@ -406,6 +345,47 @@
         gsap.from('.hero-description', { opacity: 0, y: 30, duration: 1, delay: 0.9 });
         gsap.from('.hero-cta', { opacity: 0, y: 30, duration: 1, delay: 1.2 });
 
+        function createStars() {
+            const starsContainer = document.getElementById('stars-main');
+            const starCount = 80;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                const x = Math.random() * 1920;
+                const y = Math.random() * 700;
+                const r = Math.random() * 2 + 0.5;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 3 + 2;
+                
+                star.setAttribute('cx', x);
+                star.setAttribute('cy', y);
+                star.setAttribute('r', r);
+                star.setAttribute('fill', '#fff');
+                star.setAttribute('opacity', '0.6');
+                star.style.animation = `starSparkle ${duration}s ease-in-out ${delay}s infinite`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function createBackgroundStars() {
+            const container = document.getElementById('stars-bg');
+            const starCount = 60;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'bg-star';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 8 + 's';
+                star.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                container.appendChild(star);
+            }
+        }
+
+        createStars();
+        createBackgroundStars();
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -452,8 +432,7 @@
 
         function handleNewsletter(e) {
             e.preventDefault();
-            const email = e.target.querySelector('input').value;
-            alert('Merci pour votre inscription ! ' + email);
+            alert('Merci pour votre inscription !');
             e.target.reset();
         }
 
@@ -466,7 +445,6 @@
             });
         });
 
-        // Sakura transition on scroll
         let sakuraStarted = false;
         
         function createSakuraPetal() {
@@ -497,38 +475,31 @@
         window.addEventListener('scroll', () => {
             const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
             
-            const skySvg = document.getElementById('sky-svg');
-            const wheatField = document.getElementById('wheat-field');
-            const groundEllipse = document.getElementById('ground-ellipse');
-            const stars = document.querySelector('.stars');
-            
-            if (scrollPercent < 0.3) {
-                skySvg.style.transition = 'all 1s ease';
-                skySvg.querySelector('rect').setAttribute('fill', `rgba(10, 10, 26, ${1 - scrollPercent * 2})`);
-            }
-            
-            if (scrollPercent > 0.1 && scrollPercent < 0.7) {
-                const transitionProgress = (scrollPercent - 0.1) / 0.6;
-                
-                if (stars) {
-                    stars.style.opacity = 1 - transitionProgress;
-                }
-                if (wheatField) {
-                    wheatField.style.opacity = 1 - transitionProgress * 0.8;
-                }
-                
-                const hue = 220 + transitionProgress * 60;
-                const saturation = 30 + transitionProgress * 40;
-                const lightness = 25 + transitionProgress * 25;
-                
-                skySvg.querySelector('rect').setAttribute('fill', `hsl(${hue}, ${saturation}%, ${lightness}%)`);
-                
-                if (groundEllipse) {
-                    groundEllipse.setAttribute('fill', `hsl(${350 + transitionProgress * 20}, ${70 + transitionProgress * 20}%, ${70 - transitionProgress * 20}%)`);
-                }
-            }
-            
             if (scrollPercent > 0.5) {
+                startSakuraFall();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            const skySvg = document.getElementById('sky-svg');
+            const starsMain = document.getElementById('stars-main');
+            const moon = document.querySelector('.moon');
+            const moonInner = document.querySelector('.moon-inner');
+            
+            if (scrollPercent < 0.5) {
+                if (moon) {
+                    const translateY = scrollPercent * 200;
+                    const scale = 1 + scrollPercent * 0.5;
+                    moon.style.transform = `translateY(${translateY}px) scale(${scale})`;
+                    moonInner.style.transform = `translateY(${translateY}px) scale(${scale})`;
+                }
+                if (starsMain) {
+                    starsMain.style.opacity = 1 + scrollPercent;
+                }
+            }
+            
+            if (scrollPercent > 0.3 && scrollPercent < 0.7) {
                 startSakuraFall();
             }
         });
