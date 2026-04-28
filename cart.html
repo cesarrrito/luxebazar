@@ -10,6 +10,45 @@
     <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
+    <div class="sakura-bg">
+        <svg viewBox="0 0 1920 900" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="sakuraSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2d3a5c"/>
+                    <stop offset="50%" style="stop-color:#4a5d7a"/>
+                    <stop offset="100%" style="stop-color:#ffb7c5"/>
+                </linearGradient>
+                <radialGradient id="sakuraPetal" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#fff0f3"/>
+                    <stop offset="100%" style="stop-color:#ffb7c5"/>
+                </radialGradient>
+            </defs>
+            <rect width="1920" height="900" fill="url(#sakuraSkyGrad)"/>
+            <g class="sakura-tree-silhouette">
+                <rect x="150" y="300" width="25" height="600" fill="#1a1a2e"/>
+                <path d="M162 350 Q200 200 250 300 Q300 400 280 500" stroke="#1a1a2e" stroke-width="15" fill="none"/>
+                <path d="M162 400 Q100 250 80 350" stroke="#1a1a2e" stroke-width="12" fill="none"/>
+                <path d="M250 380 Q320 280 380 350" stroke="#1a1a2e" stroke-width="10" fill="none"/>
+            </g>
+            <g class="sakura-tree-silhouette-right">
+                <rect x="1700" y="250" width="30" height="650" fill="#1a1a2e"/>
+                <path d="M1715 320 Q1760 180 1820 280 Q1880 380 1850 480" stroke="#1a1a2e" stroke-width="18" fill="none"/>
+                <path d="M1715 380 Q1640 230 1580 340" stroke="#1a1a2e" stroke-width="14" fill="none"/>
+            </g>
+            <g class="sakura-blossoms-bg" opacity="0.3">
+                <circle cx="200" cy="280" r="40" fill="#ffb7c5"/>
+                <circle cx="280" cy="320" r="55" fill="#ffc0cb"/>
+                <circle cx="150" cy="350" r="35" fill="#ffb7c5"/>
+                <circle cx="320" cy="290" r="45" fill="#ffc0cb"/>
+                <circle cx="1750" cy="260" r="50" fill="#ffb7c5"/>
+                <circle cx="1830" cy="300" r="60" fill="#ffc0cb"/>
+                <circle cx="1640" cy="320" r="40" fill="#ffb7c5"/>
+                <circle cx="1800" cy="380" r="45" fill="#ffc0cb"/>
+            </g>
+        </svg>
+        <div class="sakura-falling-petals" id="sakura-petals"></div>
+    </div>
+
     <header class="nav-container">
         <div class="logo">LE LEZARD</div>
         <nav>
@@ -40,7 +79,7 @@
                 <div class="cart-header">
                     <h1 class="animate-on-scroll">Votre Panier</h1>
                 </div>
-                <div id="cart-container">
+                <div class="cart-container" id="cart-container">
                     <div class="cart-items" id="cart-items"></div>
                     <div class="cart-summary" id="cart-summary" style="display: none;">
                         <div class="cart-summary-row">
@@ -202,6 +241,26 @@
                 nav.classList.remove('scrolled');
             }
         });
+
+        function createSakuraPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'sakura-petal-float';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 5 + 8) + 's';
+            petal.style.animationDelay = Math.random() * 2 + 's';
+            petal.style.opacity = Math.random() * 0.4 + 0.4;
+            petal.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+            document.getElementById('sakura-petals').appendChild(petal);
+            
+            setTimeout(() => {
+                petal.remove();
+            }, 13000);
+        }
+
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createSakuraPetal, i * 400);
+        }
+        setInterval(createSakuraPetal, 500);
 
         updateCartCount();
         renderCart();

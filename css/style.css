@@ -12,6 +12,11 @@
     --black: #0A0A0A;
     --overlay: rgba(13, 27, 42, 0.85);
     --card-bg: rgba(27, 38, 59, 0.6);
+    --jungle-green: #1a4d2e;
+    --jungle-dark: #0d2818;
+    --jungle-light: #2d7a4a;
+    --lizard-green: #4a9c5d;
+    --lizard-light: #6bc77a;
 }
 
 * {
@@ -184,9 +189,11 @@ button {
     50% { transform: rotate(2deg); }
 }
 
-@keyframes fall {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+@keyframes lizardMove {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(5px) translateY(-3px); }
+    50% { transform: translateX(10px) translateY(0); }
+    75% { transform: translateX(5px) translateY(3px); }
 }
 
 .animate-on-scroll {
@@ -244,10 +251,11 @@ button {
     justify-content: space-between;
     align-items: center;
     transition: all 0.4s ease;
+    background: linear-gradient(180deg, rgba(13, 27, 42, 0.95), rgba(13, 27, 42, 0.8));
 }
 
 .nav-container.scrolled {
-    background: rgba(13, 27, 42, 0.95);
+    background: rgba(13, 27, 42, 0.98);
     backdrop-filter: blur(20px);
     padding: 15px 60px;
     box-shadow: 0 4px 30px rgba(0,0,0,0.3);

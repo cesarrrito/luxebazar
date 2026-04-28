@@ -13,6 +13,79 @@
     <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
+    <div class="jungle-bg">
+        <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="jungleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0d2818"/>
+                    <stop offset="50%" style="stop-color:#1a4d2e"/>
+                    <stop offset="100%" style="stop-color:#0d3320"/>
+                </linearGradient>
+                <filter id="jungleBlur">
+                    <feGaussianBlur stdDeviation="2"/>
+                </filter>
+            </defs>
+            <rect width="1920" height="1080" fill="url(#jungleGrad)"/>
+            <g opacity="0.15" filter="url(#jungleBlur)">
+                <path d="M0 800 Q100 600 200 700 Q300 800 400 650 Q500 500 600 700 Q700 900 800 700 Q900 500 1000 650 Q1100 800 1200 600 Q1300 400 1400 600 Q1500 800 1600 550 Q1700 300 1800 500 L1920 600 L1920 1080 L0 1080 Z" fill="#2d7a4a"/>
+                <path d="M0 850 Q150 700 300 800 Q450 900 600 700 Q750 500 900 750 Q1050 1000 1200 700 Q1350 400 1500 650 Q1650 900 1800 650 L1920 750 L1920 1080 L0 1080 Z" fill="#1a4d2e"/>
+                <path d="M0 900 Q100 800 250 850 Q400 900 550 750 Q700 600 850 800 Q1000 1000 1150 750 Q1300 500 1450 700 Q1600 900 1750 700 L1920 800 L1920 1080 L0 1080 Z" fill="#4a9c5d"/>
+            </g>
+            <g class="lizards" opacity="0.08">
+                <g transform="translate(100, 150) scale(0.5)">
+                    <path d="M0 30 Q20 10 40 20 Q60 30 50 50 Q40 70 20 60 Q0 50 0 30" fill="#6bc77a"/>
+                    <circle cx="35" cy="25" r="3" fill="#0d2818"/>
+                    <path d="M0 30 Q-10 25 -15 30" stroke="#6bc77a" stroke-width="3" fill="none"/>
+                </g>
+                <g transform="translate(1700, 200) scale(0.4) rotate(15)">
+                    <path d="M0 25 Q15 5 35 15 Q55 25 45 45 Q35 65 15 50 Q-5 35 0 25" fill="#4a9c5d"/>
+                    <circle cx="30" cy="20" r="2.5" fill="#0d2818"/>
+                    <path d="M0 25 Q-8 22 -12 27" stroke="#4a9c5d" stroke-width="2.5" fill="none"/>
+                </g>
+                <g transform="translate(300, 700) scale(0.35) rotate(-20)">
+                    <path d="M0 20 Q12 4 28 12 Q44 20 36 36 Q28 52 12 40 Q-4 28 0 20" fill="#6bc77a"/>
+                    <circle cx="24" cy="16" r="2" fill="#0d2818"/>
+                </g>
+                <g transform="translate(1500, 600) scale(0.45) rotate(25)">
+                    <path d="M0 28 Q18 8 38 18 Q58 28 48 48 Q38 68 18 58 Q-2 48 0 28" fill="#4a9c5d"/>
+                    <circle cx="32" cy="22" r="2.8" fill="#0d2818"/>
+                    <path d="M0 28 Q-12 24 -18 30" stroke="#4a9c5d" stroke-width="3" fill="none"/>
+                </g>
+                <g transform="translate(800, 900) scale(0.3) rotate(10)">
+                    <path d="M0 18 Q10 3 22 10 Q34 17 28 32 Q22 47 10 38 Q-2 29 0 18" fill="#6bc77a"/>
+                    <circle cx="18" cy="14" r="1.8" fill="#0d2818"/>
+                </g>
+                <g transform="translate(1400, 350) scale(0.38) rotate(-15)">
+                    <path d="M0 22 Q14 6 30 14 Q46 22 38 40 Q30 58 14 48 Q-2 38 0 22" fill="#4a9c5d"/>
+                    <circle cx="26" cy="18" r="2.2" fill="#0d2818"/>
+                </g>
+                <g transform="translate(500, 450) scale(0.42) rotate(30)">
+                    <path d="M0 24 Q16 8 34 16 Q52 24 44 44 Q36 64 16 54 Q-4 44 0 24" fill="#6bc77a"/>
+                    <circle cx="28" cy="20" r="2.4" fill="#0d2818"/>
+                    <path d="M0 24 Q-10 20 -15 26" stroke="#6bc77a" stroke-width="2.8" fill="none"/>
+                </g>
+                <g transform="translate(1200, 150) scale(0.35) rotate(-25)">
+                    <path d="M0 20 Q12 4 26 12 Q40 20 34 36 Q28 52 12 42 Q-4 32 0 20" fill="#4a9c5d"/>
+                    <circle cx="22" cy="16" r="2" fill="#0d2818"/>
+                </g>
+            </g>
+            <g class="lizard-hiding" opacity="0.12">
+                <g transform="translate(50, 300)">
+                    <path d="M0 15 Q8 3 16 8 Q24 13 20 22 Q16 31 8 26 Q0 21 0 15" fill="#2d7a4a" transform="scale(0.6)"/>
+                </g>
+                <g transform="translate(1850, 450)">
+                    <path d="M0 15 Q8 3 16 8 Q24 13 20 22 Q16 31 8 26 Q0 21 0 15" fill="#1a4d2e" transform="scale(0.5) rotate(45)"/>
+                </g>
+                <g transform="translate(600, 150)">
+                    <path d="M0 15 Q8 3 16 8 Q24 13 20 22 Q16 31 8 26 Q0 21 0 15" fill="#4a9c5d" transform="scale(0.55) rotate(-30)"/>
+                </g>
+                <g transform="translate(1300, 850)">
+                    <path d="M0 15 Q8 3 16 8 Q24 13 20 22 Q16 31 8 26 Q0 21 0 15" fill="#2d7a4a" transform="scale(0.5) rotate(20)"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+
     <header class="nav-container">
         <div class="logo">LE LEZARD</div>
         <nav>
@@ -53,12 +126,12 @@
             <div class="container">
                 <div class="filters animate-on-scroll">
                     <div class="filter-group">
-                        <label>Catégorie</label>
-                        <select id="category-filter" onchange="filterProducts()">
-                            <option value="">Toutes</option>
-                            <option value="electronics">Électronique</option>
-                            <option value="home">Maison</option>
-                            <option value="auto">Auto</option>
+                        <label>Trier par</label>
+                        <select id="sort-filter" onchange="filterProducts()">
+                            <option value="popular">Populaires</option>
+                            <option value="price-low">Prix croissant</option>
+                            <option value="price-high">Prix décroissant</option>
+                            <option value="newest">Nouveautés</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -71,15 +144,6 @@
                             <option value="200+">200€+</option>
                         </select>
                     </div>
-                    <div class="filter-group">
-                        <label>Trier par</label>
-                        <select id="sort-filter" onchange="filterProducts()">
-                            <option value="popular">Populaires</option>
-                            <option value="price-low">Prix croissant</option>
-                            <option value="price-high">Prix décroissant</option>
-                            <option value="newest">Nouveautés</option>
-                        </select>
-                    </div>
                 </div>
             </div>
         </section>
@@ -87,15 +151,15 @@
         <section class="products-section">
             <div class="container">
                 <div class="results-count animate-on-scroll">
-                    <span id="results-text">24 produits trouvés</span>
+                    <span id="results-text">12 produits trouvés</span>
                 </div>
                 <div class="products-grid" id="products-grid">
-                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="89">
+                    <div class="product-card animate-on-scroll" data-price="89">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="60" width="120" height="80" rx="5" fill="#c9a962"/><circle cx="100" cy="100" r="25" fill="#0d1b2a"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Électronique</span>
+                            <span class="product-category">Premium</span>
                             <h3>Casque Audio Premium</h3>
                             <p class="product-description">Son Hi-Fi, réduction de bruit active</p>
                             <div class="product-rating">★★★★★</div>
@@ -103,12 +167,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Casque Audio Premium', 89.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="home" data-price="65">
+                    <div class="product-card animate-on-scroll" data-price="65">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="130" rx="50" ry="30" fill="#c9a962"/><rect x="85" y="70" width="30" height="60" fill="#e8d5a3"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Maison</span>
+                            <span class="product-category">Design</span>
                             <h3>Lampe Design LED</h3>
                             <p class="product-description">Design moderne, intensité ajustable</p>
                             <div class="product-rating">★★★★☆</div>
@@ -116,12 +180,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Lampe Design LED', 64.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="auto" data-price="45">
+                    <div class="product-card animate-on-scroll" data-price="45">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><circle cx="100" cy="100" r="60" fill="#c9a962"/><rect x="70" y="80" width="60" height="40" rx="5" fill="#0d1b2a"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Auto</span>
+                            <span class="product-category">Indispensable</span>
                             <h3>Support Téléphone GPS</h3>
                             <p class="product-description">Magnétique, 360°, ventouse puissante</p>
                             <div class="product-rating">★★★★★</div>
@@ -129,12 +193,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Support Téléphone GPS', 44.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="149">
+                    <div class="product-card animate-on-scroll" data-price="149">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><rect x="30" y="50" width="140" height="100" rx="10" fill="#34495e"/><rect x="50" y="70" width="100" height="60" rx="5" fill="#c9a962"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Électronique</span>
+                            <span class="product-category">Premium</span>
                             <h3>Montre Connectée Sport</h3>
                             <p class="product-description">Cardio, GPS, étanchéité 5ATM</p>
                             <div class="product-rating">★★★★★</div>
@@ -142,12 +206,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Montre Connectée Sport', 149.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="home" data-price="35">
+                    <div class="product-card animate-on-scroll" data-price="35">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="50" y="60" width="100" height="80" rx="10" fill="#c9a962"/><rect x="65" y="75" width="70" height="50" fill="#e8d5a3"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Maison</span>
+                            <span class="product-category">Design</span>
                             <h3>Organisateur de Bureau</h3>
                             <p class="product-description">Bois massif, 6 compartiments</p>
                             <div class="product-rating">★★★★☆</div>
@@ -155,12 +219,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Organisateur de Bureau', 34.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="auto" data-price="79">
+                    <div class="product-card animate-on-scroll" data-price="79">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="120" rx="55" ry="40" fill="#c9a962"/><rect x="80" y="100" width="40" height="30" fill="#0d1b2a"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Auto</span>
+                            <span class="product-category">Indispensable</span>
                             <h3>Caméra de Recul</h3>
                             <p class="product-description">HD, vision nocturne, sans fil</p>
                             <div class="product-rating">★★★★★</div>
@@ -168,12 +232,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Caméra de Recul', 79.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="199">
+                    <div class="product-card animate-on-scroll" data-price="199">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><path d="M60 140 L100 60 L140 140 Z" fill="#c9a962"/><rect x="80" y="100" width="40" height="40" fill="#e8d5a3"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Électronique</span>
+                            <span class="product-category">Premium</span>
                             <h3>Enceinte Portable Deluxe</h3>
                             <p class="product-description">360° sound, 24h batterie</p>
                             <div class="product-rating">★★★★★</div>
@@ -181,12 +245,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Enceinte Portable Deluxe', 199.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="home" data-price="55">
+                    <div class="product-card animate-on-scroll" data-price="55">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="100" rx="70" ry="50" fill="#c9a962"/><ellipse cx="100" cy="100" rx="50" ry="35" fill="#e8d5a3"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Maison</span>
+                            <span class="product-category">Design</span>
                             <h3>Tapis Composte Premium</h3>
                             <p class="product-description">Fibres naturelles, anti-acariens</p>
                             <div class="product-rating">★★★★☆</div>
@@ -194,12 +258,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Tapis Composte Premium', 54.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="auto" data-price="129">
+                    <div class="product-card animate-on-scroll" data-price="129">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="50" width="120" height="100" rx="5" fill="#c9a962"/><rect x="50" y="60" width="100" height="80" fill="#0d1b2a"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Auto</span>
+                            <span class="product-category">Indispensable</span>
                             <h3>Dashcam 4K Premium</h3>
                             <p class="product-description">Vision nocturne, WiFi, loop</p>
                             <div class="product-rating">★★★★★</div>
@@ -207,12 +271,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Dashcam 4K Premium', 129.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="59">
+                    <div class="product-card animate-on-scroll" data-price="59">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><circle cx="100" cy="90" r="50" fill="#c9a962"/><rect x="80" y="130" width="40" height="30" fill="#e8d5a3"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Électronique</span>
+                            <span class="product-category">Premium</span>
                             <h3>Drone Mini Compact</h3>
                             <p class="product-description">3 batteries, 30min vol</p>
                             <div class="product-rating">★★★★★</div>
@@ -220,12 +284,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Drone Mini Compact', 59.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="home" data-price="85">
+                    <div class="product-card animate-on-scroll" data-price="85">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><path d="M40 150 Q100 50 160 150" fill="#c9a962"/><rect x="85" y="100" width="30" height="50" fill="#e8d5a3"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Maison</span>
+                            <span class="product-category">Design</span>
                             <h3>Diffuseur Parfum Luxe</h3>
                             <p class="product-description">Ultrasonique, LED, temporisé</p>
                             <div class="product-rating">★★★★★</div>
@@ -233,12 +297,12 @@
                             <button class="btn-add-cart" onclick="addToCart('Diffuseur Parfum Luxe', 84.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="auto" data-price="39">
+                    <div class="product-card animate-on-scroll" data-price="39">
                         <div class="product-image">
                             <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><rect x="50" y="70" width="100" height="60" rx="30" fill="#c9a962"/><rect x="70" y="85" width="60" height="30" fill="#e8d5a3"/></svg>
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Auto</span>
+                            <span class="product-category">Indispensable</span>
                             <h3>Chargeur Induit Premium</h3>
                             <p class="product-description">15W, compatible tous phones</p>
                             <div class="product-rating">★★★★☆</div>
@@ -246,9 +310,6 @@
                             <button class="btn-add-cart" onclick="addToCart('Chargeur Induit Premium', 38.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                </div>
-                <div class="load-more animate-on-scroll">
-                    <button class="btn-secondary" onclick="loadMoreProducts()">Charger plus</button>
                 </div>
             </div>
         </section>
@@ -318,25 +379,11 @@
 
         function handleSearch(e) {
             e.preventDefault();
-            const query = document.getElementById('search-input').value;
-            alert(`Recherche: ${query}`);
+            alert(`Recherche: ${document.getElementById('search-input').value}`);
         }
 
         function filterProducts() {
-            const category = document.getElementById('category-filter').value;
-            const price = document.getElementById('price-filter').value;
-            const sort = document.getElementById('sort-filter').value;
-            
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                card.style.display = 'block';
-            });
-            
-            document.getElementById('results-text').textContent = `${cards.length} produits trouvés`;
-        }
-
-        function loadMoreProducts() {
-            alert('Chargement de plus de produits...');
+            document.getElementById('results-text').textContent = '12 produits trouvés';
         }
 
         function toggleMobileMenu() {

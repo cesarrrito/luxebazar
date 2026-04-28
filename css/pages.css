@@ -1,12 +1,37 @@
+.jungle-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.jungle-bg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.jungle-bg .lizards {
+    animation: lizardMove 15s ease-in-out infinite;
+}
+
+.jungle-bg .lizard-hiding {
+    animation: lizardMove 20s ease-in-out infinite reverse;
+}
+
 .page-content {
+    position: relative;
+    z-index: 1;
     padding-top: 100px;
-    min-height: 100vh;
 }
 
 .search-header {
     padding: 60px 0;
     text-align: center;
-    background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-deep) 100%);
+    background: linear-gradient(180deg, rgba(13, 27, 42, 0.85) 0%, rgba(13, 27, 42, 0.95) 100%);
 }
 
 .search-header h1 {
@@ -48,7 +73,7 @@
 
 .filters-section {
     padding: 30px 0;
-    background: var(--navy-deep);
+    background: rgba(13, 27, 42, 0.9);
     border-bottom: 1px solid rgba(201, 169, 98, 0.2);
 }
 
@@ -67,8 +92,8 @@
 
 .filter-group label {
     font-size: 12px;
-    text-transform: uppercase;
     letter-spacing: 1px;
+    text-transform: uppercase;
     color: var(--gold-primary);
 }
 
@@ -89,7 +114,7 @@
 
 .products-section {
     padding: 50px 0;
-    background: var(--navy-deep);
+    background: rgba(13, 27, 42, 0.85);
 }
 
 .results-count {
@@ -195,11 +220,6 @@
     color: var(--navy-deep);
 }
 
-.load-more {
-    text-align: center;
-    margin-top: 50px;
-}
-
 .notification {
     position: fixed;
     bottom: 30px;
@@ -245,9 +265,61 @@
 .cart-section {
     padding: 80px 0;
     min-height: 80vh;
+    position: relative;
+}
+
+.sakura-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sakura-bg svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sakura-falling-petals {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sakura-petal-float {
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background: linear-gradient(135deg, #ffb7c5, #ffc0cb);
+    border-radius: 50% 0 50% 50%;
+    opacity: 0.7;
+    animation: sakuraFall linear infinite;
+}
+
+@keyframes sakuraFall {
+    0% {
+        transform: translateY(-20px) rotate(0deg) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg) translateX(100px);
+        opacity: 0;
+    }
 }
 
 .cart-header {
+    position: relative;
+    z-index: 1;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -255,6 +327,11 @@
 .cart-header h1 {
     font-size: 2.5rem;
     color: var(--cream);
+}
+
+.cart-container {
+    position: relative;
+    z-index: 1;
 }
 
 .cart-items {
@@ -362,6 +439,8 @@
 }
 
 .cart-empty {
+    position: relative;
+    z-index: 1;
     text-align: center;
     padding: 80px 20px;
 }
@@ -515,54 +594,6 @@
     color: #3498db;
 }
 
-/* Category Pages */
-.category-header {
-    padding: 80px 0 60px;
-    text-align: center;
-    background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-deep) 100%);
-}
-
-.category-header h1 {
-    font-size: 2.5rem;
-    color: var(--cream);
-    margin-bottom: 15px;
-}
-
-.category-header p {
-    color: rgba(245, 240, 232, 0.7);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.category-products {
-    padding: 50px 0;
-}
-
-.category-banner {
-    padding: 40px 0;
-    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
-    margin-bottom: 50px;
-}
-
-.category-banner-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.category-banner h2 {
-    font-size: 2rem;
-    color: var(--navy-deep);
-}
-
-.category-banner p {
-    color: var(--navy-dark);
-    margin-top: 10px;
-}
-
 @media (max-width: 1024px) {
     .account-grid {
         grid-template-columns: 1fr;
@@ -580,12 +611,6 @@
     .cart-item-quantity,
     .cart-item-remove {
         grid-column: 2;
-    }
-
-    .category-banner-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
     }
 }
 
@@ -613,9 +638,5 @@
 
     .account-content {
         padding: 25px;
-    }
-
-    .category-banner-content {
-        padding: 0 20px;
     }
 }
