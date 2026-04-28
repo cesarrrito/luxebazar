@@ -539,6 +539,43 @@
         createBackgroundStars();
         createLizardStars();
 
+        let mouseX = 0, mouseY = 0;
+        let stars = [];
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            updateStarPositions();
+        });
+
+        function updateStarPositions() {
+            const bgStars = document.querySelectorAll('.bg-star');
+            bgStars.forEach(star => {
+                const rect = star.getBoundingClientRect();
+                const starX = rect.left + rect.width / 2;
+                const starY = rect.top + rect.height / 2;
+                const dx = mouseX - starX;
+                const dy = mouseY - starY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const maxDist = 150;
+                if (distance < maxDist) {
+                    const force = (1 - distance / maxDist) * 30;
+                    const angle = Math.atan2(dy, dx);
+                    const moveX = Math.cos(angle) * force;
+                    const moveY = Math.sin(angle) * force;
+                    star.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.5)`;
+                    star.style.opacity = '1';
+                    star.style.filter = 'blur(0.5px)';
+                } else {
+                    star.style.transform = '';
+                    star.style.opacity = '';
+                    star.style.filter = '';
+                }
+            });
+        }
+
+        setInterval(updateStarPositions, 16);
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -582,6 +619,15 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        document.querySelectorAll('.cart-count').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.add('shake');
+                setTimeout(() => document.body.classList.remove('shake'), 3000);
+                window.location.href = 'cart.html';
+            });
+        });
 
         function handleNewsletter(e) {
             e.preventDefault();

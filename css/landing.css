@@ -7,6 +7,11 @@
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
+    background: linear-gradient(180deg, 
+        #0a0a1a 0%, 
+        #1a1a3e 30%, 
+        #2d3a5c 60%, 
+        #4a5d7a 100%);
 }
 
 .bg-star {
@@ -17,6 +22,7 @@
     border-radius: 50%;
     animation: starSparkle 4s ease-in-out infinite;
     box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease-out;
 }
 
 .lizard-stars-bg {

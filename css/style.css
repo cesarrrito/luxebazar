@@ -375,6 +375,23 @@ button {
     transition: all 0.3s ease;
 }
 
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-8px) rotate(-0.5deg); }
+    20% { transform: translateX(8px) rotate(0.5deg); }
+    30% { transform: translateX(-8px) rotate(-0.5deg); }
+    40% { transform: translateX(8px) rotate(0.5deg); }
+    50% { transform: translateX(-6px) rotate(-0.5deg); }
+    60% { transform: translateX(6px) rotate(0.5deg); }
+    70% { transform: translateX(-4px) rotate(-0.5deg); }
+    80% { transform: translateX(4px) rotate(0.5deg); }
+    90% { transform: translateX(-2px) rotate(-0.25deg); }
+}
+
+body.shake {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
 @media (max-width: 1024px) {
     .nav-container { padding: 15px 30px; }
     .nav-links { gap: 25px; }
