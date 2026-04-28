@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recherchez et découvrez des produits de luxe sur LuxeBazar - Électronique, maison, automobile">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Boutique - LuxeBazar">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://luxebazar.vercel.app/search.html">
+    <title>Boutique | LuxeBazar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <header class="nav-container">
+        <div class="logo">LUXEBAZAR</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="search.html">Boutique</a></li>
+                <li><a href="electronics.html">Électronique</a></li>
+                <li><a href="home.html">Maison</a></li>
+                <li><a href="auto.html">Auto</a></li>
+                <li><a href="account.html">Compte</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <a href="search.html"><svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a>
+            <a href="cart.html" class="cart-count">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="search-header">
+            <div class="container">
+                <h1 class="animate-on-scroll">Notre Boutique</h1>
+                <p class="animate-on-scroll">Explorez notre collection exclusive</p>
+                <form class="search-bar animate-on-scroll" onsubmit="handleSearch(event)">
+                    <input type="text" id="search-input" placeholder="Rechercher un produit...">
+                    <button type="submit" class="btn-primary">Rechercher</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="filters-section">
+            <div class="container">
+                <div class="filters animate-on-scroll">
+                    <div class="filter-group">
+                        <label>Catégorie</label>
+                        <select id="category-filter" onchange="filterProducts()">
+                            <option value="">Toutes</option>
+                            <option value="electronics">Électronique</option>
+                            <option value="home">Maison</option>
+                            <option value="auto">Automobile</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Prix</label>
+                        <select id="price-filter" onchange="filterProducts()">
+                            <option value="">Tous</option>
+                            <option value="0-50">Moins de 50€</option>
+                            <option value="50-100">50€ - 100€</option>
+                            <option value="100-200">100€ - 200€</option>
+                            <option value="200+">200€+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Trier par</label>
+                        <select id="sort-filter" onchange="filterProducts()">
+                            <option value="popular">Populaires</option>
+                            <option value="price-low">Prix croissant</option>
+                            <option value="price-high">Prix décroissant</option>
+                            <option value="newest">Nouveautés</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <div class="results-count animate-on-scroll">
+                    <span id="results-text">24 produits trouvés</span>
+                </div>
+                <div class="products-grid" id="products-grid">
+                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="89">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="60" width="120" height="80" rx="5" fill="#c9a962"/><circle cx="100" cy="100" r="25" fill="#0d1b2a"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Électronique</span>
+                            <h3>Casque Audio Premium</h3>
+                            <p class="product-description">Son Hi-Fi, réduction de bruit active</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">89,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Casque Audio Premium', 89.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="home" data-price="65">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="130" rx="50" ry="30" fill="#c9a962"/><rect x="85" y="70" width="30" height="60" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Maison</span>
+                            <h3>Lampe Design LED</h3>
+                            <p class="product-description">Design moderne, intensité ajustable</p>
+                            <div class="product-rating">★★★★☆</div>
+                            <p class="current-price">64,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Lampe Design LED', 64.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="auto" data-price="45">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><circle cx="100" cy="100" r="60" fill="#c9a962"/><rect x="70" y="80" width="60" height="40" rx="5" fill="#0d1b2a"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Auto</span>
+                            <h3>Support Téléphone GPS</h3>
+                            <p class="product-description">Magnétique,360°, ventouse puissante</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">44,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Support Téléphone GPS', 44.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="149">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><rect x="30" y="50" width="140" height="100" rx="10" fill="#34495e"/><rect x="50" y="70" width="100" height="60" rx="5" fill="#c9a962"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Électronique</span>
+                            <h3>Montre Connectée Sport</h3>
+                            <p class="product-description">Cardio, GPS, étanchéité 5ATM</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">149,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Montre Connectée Sport', 149.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="home" data-price="35">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="50" y="60" width="100" height="80" rx="10" fill="#c9a962"/><rect x="65" y="75" width="70" height="50" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Maison</span>
+                            <h3>Organisateur de Bureau</h3>
+                            <p class="product-description">Bois massif, 6 compartiments</p>
+                            <div class="product-rating">★★★★☆</div>
+                            <p class="current-price">34,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Organisateur de Bureau', 34.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="auto" data-price="79">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="120" rx="55" ry="40" fill="#c9a962"/><rect x="80" y="100" width="40" height="30" fill="#0d1b2a"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Auto</span>
+                            <h3>Caméra de Recul</h3>
+                            <p class="product-description">HD, vision nocturne, sans fil</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">79,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Caméra de Recul', 79.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="199">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><path d="M60 140 L100 60 L140 140 Z" fill="#c9a962"/><rect x="80" y="100" width="40" height="40" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Électronique</span>
+                            <h3>Enceinte Portable Deluxe</h3>
+                            <p class="product-description">360° sound, 24h batterie</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">199,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Enceinte Portable Deluxe', 199.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="home" data-price="55">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="100" rx="70" ry="50" fill="#c9a962"/><ellipse cx="100" cy="100" rx="50" ry="35" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Maison</span>
+                            <h3>Tapis Composte Premium</h3>
+                            <p class="product-description">Fibres naturelles, anti-acariens</p>
+                            <div class="product-rating">★★★★☆</div>
+                            <p class="current-price">54,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Tapis Composte Premium', 54.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="auto" data-price="129">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="50" width="120" height="100" rx="5" fill="#c9a962"/><rect x="50" y="60" width="100" height="80" fill="#0d1b2a"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Auto</span>
+                            <h3>Dashcam 4K Premium</h3>
+                            <p class="product-description">Vision nocturne, WiFi, loop</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">129,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Dashcam 4K Premium', 129.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="electronics" data-price="59">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><circle cx="100" cy="90" r="50" fill="#c9a962"/><rect x="80" y="130" width="40" height="30" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Électronique</span>
+                            <h3>Drone Mini Compact</h3>
+                            <p class="product-description">3 batteries, 30min vol</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">59,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Drone Mini Compact', 59.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="home" data-price="85">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><path d="M40 150 Q100 50 160 150" fill="#c9a962"/><rect x="85" y="100" width="30" height="50" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Maison</span>
+                            <h3>Diffuseur Parfum Luxe</h3>
+                            <p class="product-description">Ultrasonique, LED, temporisé</p>
+                            <div class="product-rating">★★★★★</div>
+                            <p class="current-price">84,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Diffuseur Parfum Luxe', 84.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll" data-category="auto" data-price="39">
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><rect x="50" y="70" width="100" height="60" rx="30" fill="#c9a962"/><rect x="70" y="85" width="60" height="30" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Auto</span>
+                            <h3>Chargeur Induit Premium</h3>
+                            <p class="product-description">15W, compatible tous phones</p>
+                            <div class="product-rating">★★★★☆</div>
+                            <p class="current-price">38,99€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Chargeur Induit Premium', 38.99)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="load-more animate-on-scroll">
+                    <button class="btn-secondary" onclick="loadMoreProducts()">Charger plus</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>LUXEBAZAR</h4>
+                    <p>L'excellence du shopping luxe, accessible à tous.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="search.html">Boutique</a></li>
+                        <li><a href="electronics.html">Électronique</a></li>
+                        <li><a href="home.html">Maison</a></li>
+                        <li><a href="auto.html">Auto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Compte</h4>
+                    <ul>
+                        <li><a href="account.html">Mon Compte</a></li>
+                        <li><a href="cart.html">Panier</a></li>
+                        <li><a href="#">Mes Commandes</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>support@luxebazar.com</li>
+                        <li>+33 1 23 45 67 89</li>
+                        <li>Paris, France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LuxeBazar. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('luxebazar_cart')) || [];
+
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price, quantity: 1 });
+            localStorage.setItem('luxebazar_cart', JSON.stringify(cart));
+            updateCartCount();
+            showNotification(`${name} ajouté au panier!`);
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        function handleSearch(e) {
+            e.preventDefault();
+            const query = document.getElementById('search-input').value;
+            alert(`Recherche: ${query}`);
+        }
+
+        function filterProducts() {
+            const category = document.getElementById('category-filter').value;
+            const price = document.getElementById('price-filter').value;
+            const sort = document.getElementById('sort-filter').value;
+            
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                card.style.display = 'block';
+            });
+            
+            document.getElementById('results-text').textContent = `${cards.length} produits trouvés`;
+        }
+
+        function loadMoreProducts() {
+            alert('Chargement de plus de produits...');
+        }
+
+        function toggleMobileMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-container');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        updateCartCount();
+    </script>
+</body>
+</html>

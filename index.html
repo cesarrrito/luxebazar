@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxeBazar - Votre destination pour des produits de dropshipping haut de gamme. Électronique, accessoires ménagers et automobiles aux meilleures prix.">
+    <meta name="keywords" content="dropshipping, luxe, électronique, accessoires ménagers, automobile, shopping, van gogh">
+    <meta name="author" content="LuxeBazar">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="LuxeBazar - Produits de Luxe en Dropshipping">
+    <meta property="og:description" content="Découvrez notre collection exclusive de produits haut de gamme">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="canonical" href="https://luxebazar.vercel.app">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+    <title>LuxeBazar | Collection Exclusive de Produits de Luxe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <header class="nav-container">
+        <div class="logo">LUXEBAZAR</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="search.html">Boutique</a></li>
+                <li><a href="electronics.html">Électronique</a></li>
+                <li><a href="home.html">Maison</a></li>
+                <li><a href="auto.html">Auto</a></li>
+                <li><a href="account.html">Compte</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <a href="search.html"><svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a>
+            <a href="cart.html" class="cart-count">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="van-gogh-bg">
+                <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a1a2e"/>
+                            <stop offset="30%" style="stop-color:#16213e"/>
+                            <stop offset="60%" style="stop-color:#1f4068"/>
+                            <stop offset="100%" style="stop-color:#4a69bd"/>
+                        </linearGradient>
+                        <linearGradient id="wheatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#c9a962"/>
+                            <stop offset="50%" style="stop-color:#e8d5a3"/>
+                            <stop offset="100%" style="stop-color:#8b7355"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+                    <circle cx="1600" cy="150" r="80" fill="#f4d03f" opacity="0.3" filter="url(#glow)"/>
+                    <circle cx="1600" cy="150" r="60" fill="#f9e79f" opacity="0.5"/>
+                    <g class="stars">
+                        <circle cx="200" cy="100" r="1.5" fill="#fff" opacity="0.6"/>
+                        <circle cx="350" cy="180" r="1" fill="#fff" opacity="0.4"/>
+                        <circle cx="500" cy="80" r="2" fill="#fff" opacity="0.7"/>
+                        <circle cx="700" cy="150" r="1" fill="#fff" opacity="0.5"/>
+                        <circle cx="900" cy="60" r="1.5" fill="#fff" opacity="0.6"/>
+                        <circle cx="1100" cy="120" r="1" fill="#fff" opacity="0.4"/>
+                        <circle cx="1300" cy="90" r="2" fill="#fff" opacity="0.7"/>
+                        <circle cx="150" cy="200" r="1" fill="#fff" opacity="0.5"/>
+                        <circle cx="450" cy="250" r="1.5" fill="#fff" opacity="0.6"/>
+                        <circle cx="650" cy="200" r="1" fill="#fff" opacity="0.4"/>
+                        <circle cx="850" cy="220" r="1" fill="#fff" opacity="0.5"/>
+                        <circle cx="1050" cy="180" r="1.5" fill="#fff" opacity="0.6"/>
+                        <circle cx="1250" cy="200" r="1" fill="#fff" opacity="0.4"/>
+                        <circle cx="1450" cy="170" r="1" fill="#fff" opacity="0.5"/>
+                    </g>
+                    <g class="cypress">
+                        <path d="M180 1080 Q200 800 190 600 Q185 400 200 200 Q205 150 195 100 Q190 150 195 200 Q210 400 205 600 Q195 800 180 1080" fill="#0d1b2a" opacity="0.8"/>
+                        <path d="M220 1080 Q245 820 235 640 Q225 460 240 260 Q250 180 235 120 Q225 180 230 260 Q245 460 240 640 Q230 820 220 1080" fill="#1b263b" opacity="0.7"/>
+                    </g>
+                    <g class="cypress2">
+                        <path d="M1650 1080 Q1670 850 1660 680 Q1655 500 1665 350 Q1675 250 1660 180 Q1645 250 1655 350 Q1665 500 1660 680 Q1650 850 1650 1080" fill="#0d1b2a" opacity="0.8"/>
+                        <path d="M1700 1080 Q1725 880 1715 720 Q1705 560 1720 400 Q1735 280 1715 200 Q1695 280 1710 400 Q1720 560 1715 720 Q1705 880 1700 1080" fill="#1b263b" opacity="0.6"/>
+                    </g>
+                    <g class="wheat-field">
+                        <g class="wheat-layer-1">
+                            <path d="M0 750 Q50 740 100 750 Q150 760 200 750" stroke="#c9a962" stroke-width="2" fill="none"/>
+                            <path d="M50 760 Q80 720 100 680" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M100 755 Q130 710 145 665" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M150 760 Q175 700 185 645" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                            <path d="M200 750 Q230 700 245 650" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                        </g>
+                        <g class="wheat-layer-2">
+                            <path d="M200 780 Q280 770 360 780 Q440 790 520 780" stroke="#c9a962" stroke-width="2" fill="none"/>
+                            <path d="M280 790 Q320 740 340 690" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M360 785 Q400 730 420 680" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M440 790 Q475 725 490 670" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                            <path d="M520 780 Q560 730 580 680" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                        </g>
+                        <g class="wheat-layer-3">
+                            <path d="M500 800 Q600 790 700 800 Q800 810 900 800" stroke="#c9a962" stroke-width="2" fill="none"/>
+                            <path d="M600 810 Q650 760 670 710" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M700 805 Q745 745 760 690" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M800 810 Q840 745 855 685" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                        </g>
+                        <g class="wheat-layer-4">
+                            <path d="M850 820 Q950 810 1050 820 Q1150 830 1250 820" stroke="#c9a962" stroke-width="2" fill="none"/>
+                            <path d="M950 830 Q1000 780 1020 730" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M1050 825 Q1095 765 1110 705" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                            <path d="M1150 830 Q1190 765 1205 700" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                        </g>
+                        <g class="wheat-layer-5">
+                            <path d="M1200 840 Q1300 830 1400 840 Q1500 850 1600 840" stroke="#c9a962" stroke-width="2" fill="none"/>
+                            <path d="M1300 850 Q1350 795 1370 740" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M1400 845 Q1445 780 1460 720" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                            <path d="M1500 850 Q1540 785 1555 725" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                        </g>
+                        <g class="wheat-layer-6">
+                            <path d="M1550 860 Q1650 850 1750 860 Q1850 870 1920 860" stroke="#c9a962" stroke-width="2" fill="none"/>
+                            <path d="M1650 870 Q1700 815 1720 760" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            <path d="M1750 865 Q1795 800 1810 740" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                        </g>
+                    </g>
+                    <ellipse cx="960" cy="950" rx="800" ry="150" fill="url(#wheatGrad)" opacity="0.3"/>
+                </svg>
+            </div>
+            <div class="hero-content">
+                <span class="hero-subtitle animate-on-scroll">Collection Exclusive 2024</span>
+                <h1 class="hero-title">
+                    <span class="animate-on-scroll">L'Art du</span>
+                    <span class="gold-gradient animate-on-scroll">Shopping Luxueux</span>
+                </h1>
+                <p class="hero-description animate-on-scroll">
+                    Découvrez une sélection raffinée de produits de dropshipping AliExpress, 
+                    soigneusement choisis pour leur qualité exceptionnelle et leur élégance intemporelle.
+                </p>
+                <div class="hero-cta">
+                    <a href="search.html" class="btn-primary animate-on-scroll">Explorer la Collection</a>
+                    <a href="#promotions" class="btn-secondary animate-on-scroll">Promotions Flash</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <section id="promotions" class="flash-sales">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-subtitle">Ne manquez pas</span>
+                    <h2 class="section-title">Promotions Flash</h2>
+                    <div class="countdown-timer" id="countdown">
+                        <div class="time-block">
+                            <span class="time-value" id="hours">08</span>
+                            <span class="time-label">Heures</span>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-block">
+                            <span class="time-value" id="minutes">45</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-block">
+                            <span class="time-value" id="seconds">32</span>
+                            <span class="time-label">Secondes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card flash animate-on-scroll" data-discount="40">
+                        <div class="discount-badge">-40%</div>
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="60" width="120" height="80" rx="5" fill="#c9a962"/><circle cx="100" cy="100" r="25" fill="#0d1b2a"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <h3>Casque Audio Premium</h3>
+                            <p class="original-price">89,99€</p>
+                            <p class="current-price">53,99€</p>
+                            <div class="stock-bar"><div class="stock-fill" style="width: 65%"></div></div>
+                            <span class="stock-text">65% vendu</span>
+                        </div>
+                    </div>
+                    <div class="product-card flash animate-on-scroll" data-discount="55">
+                        <div class="discount-badge">-55%</div>
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><rect x="30" y="50" width="140" height="100" rx="10" fill="#34495e"/><rect x="50" y="70" width="100" height="60" rx="5" fill="#c9a962"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <h3>Montre Connectée</h3>
+                            <p class="original-price">149,99€</p>
+                            <p class="current-price">67,49€</p>
+                            <div class="stock-bar"><div class="stock-fill" style="width: 82%"></div></div>
+                            <span class="stock-text">82% vendu</span>
+                        </div>
+                    </div>
+                    <div class="product-card flash animate-on-scroll" data-discount="35">
+                        <div class="discount-badge">-35%</div>
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><ellipse cx="100" cy="120" rx="60" ry="40" fill="#c9a962"/><rect x="85" y="60" width="30" height="60" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <h3>Lampe Design LED</h3>
+                            <p class="original-price">79,99€</p>
+                            <p class="current-price">51,99€</p>
+                            <div class="stock-bar"><div class="stock-fill" style="width: 45%"></div></div>
+                            <span class="stock-text">45% vendu</span>
+                        </div>
+                    </div>
+                    <div class="product-card flash animate-on-scroll" data-discount="50">
+                        <div class="discount-badge">-50%</div>
+                        <div class="product-image">
+                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><path d="M60 140 L100 60 L140 140 Z" fill="#c9a962"/><rect x="80" y="100" width="40" height="40" fill="#e8d5a3"/></svg>
+                        </div>
+                        <div class="product-info">
+                            <h3>Enceinte Portable</h3>
+                            <p class="original-price">119,99€</p>
+                            <p class="current-price">59,99€</p>
+                            <div class="stock-bar"><div class="stock-fill" style="width: 73%"></div></div>
+                            <span class="stock-text">73% vendu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories-preview">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-subtitle">Parcourir par</span>
+                    <h2 class="section-title">Nos Univers</h2>
+                </div>
+                <div class="categories-grid">
+                    <a href="electronics.html" class="category-card animate-scale">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 80 80"><rect x="10" y="20" width="60" height="40" rx="5" fill="#c9a962"/><rect x="15" y="25" width="50" height="30" rx="3" fill="#0d1b2a"/><circle cx="40" cy="40" r="8" fill="#e8d5a3"/></svg>
+                        </div>
+                        <h3>Électronique</h3>
+                        <p>High-tech & Innovation</p>
+                        <span class="category-arrow">→</span>
+                    </a>
+                    <a href="home.html" class="category-card animate-scale">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 80 80"><path d="M40 10 L70 35 L70 70 L10 70 L10 35 Z" fill="#c9a962"/><rect x="30" y="45" width="20" height="25" fill="#0d1b2a"/></svg>
+                        </div>
+                        <h3>Maison</h3>
+                        <p>Accessoires Ménagers</p>
+                        <span class="category-arrow">→</span>
+                    </a>
+                    <a href="auto.html" class="category-card animate-scale">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 80 80"><ellipse cx="40" cy="55" rx="30" ry="15" fill="#c9a962"/><rect x="15" y="35" width="50" height="20" rx="10" fill="#e8d5a3"/><circle cx="25" cy="55" r="8" fill="#0d1b2a"/><circle cx="55" cy="55" r="8" fill="#0d1b2a"/></svg>
+                        </div>
+                        <h3>Automobile</h3>
+                        <p>Accessoires Auto</p>
+                        <span class="category-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text animate-left">
+                        <span class="section-subtitle">Notre Histoire</span>
+                        <h2 class="section-title">À Propos de LuxeBazar</h2>
+                        <p>
+                            Né de la passion pour l'excellence et de la fascination pour l'artisanat mondial, 
+                            LuxeBazar est né d'une vision simple : rendre le luxe accessible à tous.
+                        </p>
+                        <p>
+                            Nous sélectionnons avec soin chaque produit de nos partenaires AliExpress, 
+                            en privilégiant la qualité, l'authenticité et la satisfaction client. 
+                            Notre équipe dédiée parcourt des milliers de produits pour ne retenir que l'élite.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Qualité Garantie</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Livraison Mondiale</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Service Client 24/7</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Retours Gratuits</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image animate-right">
+                        <div class="artwork-frame">
+                            <svg viewBox="0 0 400 500">
+                                <defs>
+                                    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#c9a962"/>
+                                        <stop offset="50%" style="stop-color:#e8d5a3"/>
+                                        <stop offset="100%" style="stop-color:#8b7355"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect x="10" y="10" width="380" height="480" rx="5" fill="url(#frameGrad)" stroke="#c9a962" stroke-width="3"/>
+                                <rect x="25" y="25" width="350" height="450" fill="#0d1b2a"/>
+                                <circle cx="200" cy="150" r="60" fill="#f4d03f" opacity="0.3"/>
+                                <path d="M50 400 Q100 350 150 380 Q200 410 250 370 Q300 330 350 360" stroke="#c9a962" stroke-width="2" fill="none"/>
+                                <g class="stars-mini">
+                                    <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6"/>
+                                    <circle cx="150" cy="60" r="1.5" fill="#fff" opacity="0.5"/>
+                                    <circle cx="250" cy="90" r="2" fill="#fff" opacity="0.7"/>
+                                    <circle cx="320" cy="70" r="1.5" fill="#fff" opacity="0.5"/>
+                                </g>
+                                <path d="M100 450 L130 300 L120 250 Q115 200 125 150" stroke="#1b263b" stroke-width="8" fill="none"/>
+                                <path d="M280 450 L300 350 Q310 280 295 220" stroke="#1b263b" stroke-width="6" fill="none"/>
+                                <path d="M50 420 Q80 400 100 420 Q120 440 140 420" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                                <path d="M150 430 Q180 410 200 430 Q220 450 250 430" stroke="#e8d5a3" stroke-width="1.5" fill="none"/>
+                                <path d="M260 420 Q290 395 310 420 Q330 445 350 420" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content animate-on-scroll">
+                    <h2>Restez Connecté</h2>
+                    <p>Inscrivez-vous pour recevoir nos offres exclusives et dernières nouveautés.</p>
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" placeholder="Votre adresse email" required>
+                        <button type="submit" class="btn-primary">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>LUXEBAZAR</h4>
+                    <p>L'excellence du shopping luxe, accessible à tous.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="search.html">Boutique</a></li>
+                        <li><a href="electronics.html">Électronique</a></li>
+                        <li><a href="home.html">Maison</a></li>
+                        <li><a href="auto.html">Auto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Compte</h4>
+                    <ul>
+                        <li><a href="account.html">Mon Compte</a></li>
+                        <li><a href="cart.html">Panier</a></li>
+                        <li><a href="#">Mes Commandes</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>support@luxebazar.com</li>
+                        <li>+33 1 23 45 67 89</li>
+                        <li>Paris, France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LuxeBazar. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from('.hero-subtitle', { opacity: 0, y: 30, duration: 1, delay: 0.3 });
+        gsap.from('.hero-title span', { opacity: 0, y: 50, duration: 1, stagger: 0.2, delay: 0.5 });
+        gsap.from('.hero-description', { opacity: 0, y: 30, duration: 1, delay: 0.9 });
+        gsap.from('.hero-cta', { opacity: 0, y: 30, duration: 1, delay: 1.2 });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right, .animate-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        function toggleMobileMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-container');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function updateCountdown() {
+            const now = new Date();
+            const nextSale = new Date(now);
+            nextSale.setHours(23, 59, 59, 999);
+            
+            const diff = nextSale - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert('Merci pour votre inscription ! ' + email);
+            e.target.reset();
+        }
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, { scale: 1.03, duration: 0.3 });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { scale: 1, duration: 0.3 });
+            });
+        });
+    </script>
+</body>
+</html>
