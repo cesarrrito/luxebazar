@@ -146,7 +146,7 @@
 .hero-description {
     font-size: 18px;
     line-height: 1.8;
-    color: rgba(245, 240, 232, 0.8);
+    color: rgba(245, 240, 232, 0.95);
     max-width: 600px;
     margin: 0 auto 40px;
 }
@@ -156,6 +156,30 @@
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.trust-badges {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(245, 240, 232, 0.7);
+    font-size: 13px;
+}
+
+.trust-badge svg {
+    width: 20px;
+    height: 20px;
+    color: var(--gold-primary);
 }
 
 .transition-section {

@@ -110,6 +110,12 @@ button {
     left: 100%;
 }
 
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 4px;
+}
+
 .btn-secondary {
     background: transparent;
     color: var(--gold-primary);
@@ -224,12 +230,18 @@ button {
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.animate-on-scroll.hero-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
 }
 
 .animate-left {
@@ -320,6 +332,11 @@ button {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.nav-links a:focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 4px;
 }
 
 .nav-actions {

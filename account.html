@@ -13,23 +13,25 @@
     <div class="stars-bg" id="stars-bg"></div>
 
     <header class="nav-container">
-        <div class="logo">LE LEZARD</div>
+        <a href="index.html" class="logo" aria-label="Le Lezard - Accueil">LE LEZARD</a>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="search.html">Boutique</a></li>
                 <li><a href="cart.html">Panier</a></li>
-                <li><a href="account.html">Compte</a></li>
+                <li><a href="account.html" aria-current="page">Compte</a></li>
             </ul>
         </nav>
         <div class="nav-actions">
-            <a href="search.html"><svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a>
-            <a href="cart.html" class="cart-count">
-                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <a href="search.html" aria-label="Rechercher">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </a>
+            <a href="cart.html" class="cart-count" aria-label="Panier">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                 <span id="cart-count">0</span>
             </a>
         </div>
-        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <div class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu" role="button">
             <span></span>
             <span></span>
             <span></span>

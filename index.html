@@ -24,19 +24,21 @@
     <div class="lizard-stars-bg" id="lizard-stars-bg"></div>
 
     <header class="nav-container">
-        <div class="logo">LE LEZARD</div>
+        <a href="index.html" class="logo" aria-label="Le Lezard - Accueil">LE LEZARD</a>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
                 <li><a href="search.html">Boutique</a></li>
                 <li><a href="cart.html">Panier</a></li>
                 <li><a href="account.html">Compte</a></li>
             </ul>
         </nav>
         <div class="nav-actions">
-            <a href="search.html"><svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a>
-            <a href="cart.html" class="cart-count">
-                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <a href="search.html" aria-label="Rechercher">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </a>
+            <a href="cart.html" class="cart-count" aria-label="Panier">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                 <span id="cart-count">0</span>
             </a>
         </div>
@@ -95,16 +97,34 @@
             <div class="hero-content">
                 <span class="hero-subtitle animate-on-scroll">Collection Exclusive 2024</span>
                 <h1 class="hero-title">
-                    <span class="animate-on-scroll">L'Art du</span>
-                    <span class="gold-gradient animate-on-scroll">Shopping Luxueux</span>
+                    <span class="animate-on-scroll">Accessoires premium sélectionnés</span>
+                    <span class="gold-gradient animate-on-scroll">Pour un quotidien élégant</span>
                 </h1>
                 <p class="hero-description animate-on-scroll">
-                    Découvrez une sélection raffinée de produits de dropshipping AliExpress, 
-                    soigneusement choisis pour leur qualité exceptionnelle et leur élégance intemporelle.
+                    Découvrez notre séléction de produits high-tech, maison et auto. 
+                    Qualite verifiable, livraison mondiale, retours gratuits.
                 </p>
                 <div class="hero-cta">
                     <a href="search.html" class="btn-primary animate-on-scroll">Explorer la Collection</a>
                     <a href="#promotions" class="btn-secondary animate-on-scroll">Promotions Flash</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Qualité Vérifiée</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                        <span>Livraison Mondiale</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 15v-1a4 4 0 00-4-4H8m0 0v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+                        <span>Retours Gratuits</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        <span>Paiement Sécurisé</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -466,6 +486,10 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('.hero-subtitle, .hero-title span, .hero-description, .hero-cta').forEach(el => {
+            el.classList.add('hero-visible');
+        });
 
         gsap.from('.hero-subtitle', { opacity: 0, y: 30, duration: 1, delay: 0.3 });
         gsap.from('.hero-title span', { opacity: 0, y: 50, duration: 1, stagger: 0.2, delay: 0.5 });
