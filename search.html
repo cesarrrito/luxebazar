@@ -14,6 +14,10 @@
 </head>
 <body>
     <div class="stars-bg" id="stars-bg"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer le thème">
+        <span id="theme-icon">☀️</span>
+        <span id="theme-text">Clair</span>
+    </button>
 
     <header class="nav-container">
         <a href="index.html" class="logo" aria-label="Le Lezard - Accueil">LE LEZARD</a>
@@ -97,20 +101,20 @@
                 <div class="products-grid" id="products-grid">
                     <div class="product-card animate-on-scroll" data-category="tech" data-price="89">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="60" width="120" height="80" rx="5" fill="#c9a962"/><circle cx="100" cy="100" r="25" fill="#0d1b2a"/></svg>
+                            <img src="https://www.phonelook.fr/image/data/prod/Guess_casque_audio_premium_sans_fil_headphones_Bluetooth_53_Studio_Quality_Sound_Cuir_monogramme_Noir_Guess_Premium-Audio-Kopfhorer_drahtlos_Headphones_Bluetooth_53_Studio_Quality_Sound_Leder_Monogramm_Schwarz.jpg" alt="Guess Casque Audio Premium Bluetooth" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Tech</span>
-                            <h3>Casque Audio Premium</h3>
-                            <p class="product-description">Son Hi-Fi, réduction de bruit active</p>
+                            <h3>Guess Casque Audio Premium</h3>
+                            <p class="product-description">Bluetooth 5.3, 32h autonomie, cuir monogramme</p>
                             <div class="product-rating">★★★★★</div>
-                            <p class="current-price">89,99€</p>
-                            <button class="btn-add-cart" onclick="addToCart('Casque Audio Premium', 89.99)">Ajouter au panier</button>
+                            <p class="current-price">49,95€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Guess Casque Audio Premium', 49.95)">Ajouter au panier</button>
                         </div>
                     </div>
                     <div class="product-card animate-on-scroll" data-category="maison" data-price="65">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="130" rx="50" ry="30" fill="#c9a962"/><rect x="85" y="70" width="30" height="60" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=400&fit=crop" alt="Lampe Design LED" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Maison</span>
@@ -123,7 +127,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="auto" data-price="45">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><circle cx="100" cy="100" r="60" fill="#c9a962"/><rect x="70" y="80" width="60" height="40" rx="5" fill="#0d1b2a"/></svg>
+                            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&h=400&fit=crop" alt="Support Téléphone GPS" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Auto</span>
@@ -134,22 +138,22 @@
                             <button class="btn-add-cart" onclick="addToCart('Support Téléphone GPS', 44.99)">Ajouter au panier</button>
                         </div>
                     </div>
-                    <div class="product-card animate-on-scroll" data-category="tech" data-price="149">
+                    <div class="product-card animate-on-scroll" data-category="tech" data-price="99">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><rect x="30" y="50" width="140" height="100" rx="10" fill="#34495e"/><rect x="50" y="70" width="100" height="60" rx="5" fill="#c9a962"/></svg>
+                            <img src="https://www.louispion.fr/media/catalog/product/4/8/4895173333378_1_be1d.png?optimize=medium&fit=bounds&height=1000&width=1000&canvas=1000:1000" alt="Ice Watch Montre Connectée Smart 2.0" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Tech</span>
-                            <h3>Montre Connectée Sport</h3>
-                            <p class="product-description">Cardio, GPS, étanchéité 5ATM</p>
+                            <h3>Ice Watch Montre Connectée</h3>
+                            <p class="product-description">Smart 2.0, notifications, tracker activité</p>
                             <div class="product-rating">★★★★★</div>
-                            <p class="current-price">149,99€</p>
-                            <button class="btn-add-cart" onclick="addToCart('Montre Connectée Sport', 149.99)">Ajouter au panier</button>
+                            <p class="current-price">99,00€</p>
+                            <button class="btn-add-cart" onclick="addToCart('Ice Watch Montre Connectée', 99.00)">Ajouter au panier</button>
                         </div>
                     </div>
                     <div class="product-card animate-on-scroll" data-category="maison" data-price="35">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="50" y="60" width="100" height="80" rx="10" fill="#c9a962"/><rect x="65" y="75" width="70" height="50" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?w=400&h=400&fit=crop" alt="Organisateur de Bureau" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Maison</span>
@@ -162,7 +166,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="auto" data-price="79">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="120" rx="55" ry="40" fill="#c9a962"/><rect x="80" y="100" width="40" height="30" fill="#0d1b2a"/></svg>
+                            <img src="https://images.unsplash.com/photo-1609782523307-8b9967ab0694?w=400&h=400&fit=crop" alt="Caméra de Recul" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Auto</span>
@@ -170,12 +174,12 @@
                             <p class="product-description">HD, vision nocturne, sans fil</p>
                             <div class="product-rating">★★★★★</div>
                             <p class="current-price">79,99€</p>
-                            <button class="btn-add-cart" onclick="addToCart('Caméra de Recul', 79.99)">Ajouter au panier</button>
+                            <p class="product-unavailable">Indisponible</p>
                         </div>
                     </div>
                     <div class="product-card animate-on-scroll" data-category="tech" data-price="199">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><path d="M60 140 L100 60 L140 140 Z" fill="#c9a962"/><rect x="80" y="100" width="40" height="40" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Enceinte Portable Deluxe" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Tech</span>
@@ -188,7 +192,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="luxe" data-price="55">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="100" rx="70" ry="50" fill="#c9a962"/><ellipse cx="100" cy="100" rx="50" ry="35" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop" alt="Sac de Voyage Premium" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Luxe</span>
@@ -201,7 +205,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="auto" data-price="129">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="50" width="120" height="100" rx="5" fill="#c9a962"/><rect x="50" y="60" width="100" height="80" fill="#0d1b2a"/></svg>
+                            <img src="https://images.unsplash.com/photo-1610015787287-4e4c55c8c60e?w=400&h=400&fit=crop" alt="Dashcam 4K Premium" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Auto</span>
@@ -214,7 +218,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="tech" data-price="59">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><circle cx="100" cy="90" r="50" fill="#c9a962"/><rect x="80" y="130" width="40" height="30" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop" alt="Drone Mini Compact" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Tech</span>
@@ -227,7 +231,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="maison" data-price="85">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><path d="M40 150 Q100 50 160 150" fill="#c9a962"/><rect x="85" y="100" width="30" height="50" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=400&fit=crop" alt="Diffuseur Parfum Luxe" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Maison</span>
@@ -240,7 +244,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="luxe" data-price="39">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><rect x="50" y="70" width="100" height="60" rx="30" fill="#c9a962"/><rect x="70" y="85" width="60" height="30" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop" alt="Bracelet Cuir Premium" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Luxe</span>
@@ -253,7 +257,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="tech" data-price="75">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><rect x="40" y="50" width="120" height="100" rx="5" fill="#c9a962"/><circle cx="100" cy="100" r="30" fill="#0d1b2a"/></svg>
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=400&fit=crop" alt="Ecouteurs Sans Fil Pro" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Tech</span>
@@ -274,12 +278,12 @@
                             <p class="product-description">Digital, USB, alerte couleur</p>
                             <div class="product-rating">★★★★★</div>
                             <p class="current-price">54,99€</p>
-                            <button class="btn-add-cart" onclick="addToCart('Jauge Pression Pneus LED', 54.99)">Ajouter au panier</button>
+                            <p class="product-unavailable">Indisponible</p>
                         </div>
                     </div>
                     <div class="product-card animate-on-scroll" data-category="luxe" data-price="120">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#2c3e50" width="200" height="200"/><circle cx="100" cy="90" r="45" fill="#c9a962"/><circle cx="100" cy="90" r="30" fill="#e8d5a3"/><path d="M85 80 L100 65 L115 80" stroke="#0d1b2a" stroke-width="3" fill="none"/></svg>
+                            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400&h=400&fit=crop" alt="Montre Classique Or" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Luxe</span>
@@ -292,7 +296,7 @@
                     </div>
                     <div class="product-card animate-on-scroll" data-category="maison" data-price="95">
                         <div class="product-image">
-                            <svg viewBox="0 0 200 200"><rect fill="#1b263b" width="200" height="200"/><ellipse cx="100" cy="110" rx="60" ry="45" fill="#c9a962"/><rect x="80" y="80" width="40" height="60" fill="#e8d5a3"/></svg>
+                            <img src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?w=400&h=400&fit=crop" alt="Vase Decoratif Design" loading="lazy">
                         </div>
                         <div class="product-info">
                             <span class="product-category">Maison</span>
@@ -365,6 +369,21 @@
         }
 
         createBackgroundStars();
+
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                icon.textContent = '☀️';
+                text.textContent = 'Clair';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                icon.textContent = '🌙';
+                text.textContent = 'Sombre';
+            }
+        }
 
         let cart = JSON.parse(localStorage.getItem('lelezard_cart')) || [];
 

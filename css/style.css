@@ -15,6 +15,21 @@
     --neon-glow: 0 0 10px rgba(201, 169, 98, 0.8), 0 0 20px rgba(201, 169, 98, 0.6), 0 0 30px rgba(201, 169, 98, 0.4);
 }
 
+[data-theme="light"] {
+    --gold-primary: #8B7355;
+    --gold-light: #C9A962;
+    --gold-dark: #6B5344;
+    --navy-deep: #F5F0E8;
+    --navy-dark: #E8E0D4;
+    --navy-medium: #D4CBC0;
+    --cream: #1B263B;
+    --white: #0D1B2A;
+    --black: #F5F0E8;
+    --overlay: rgba(245, 240, 232, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --neon-glow: none;
+}
+
 * {
     margin: 0;
     padding: 0;
