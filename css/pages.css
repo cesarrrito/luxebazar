@@ -197,6 +197,10 @@
     object-fit: cover;
 }
 
+.product-image img:hover {
+    transform: none;
+}
+
 .product-unavailable {
     color: rgba(245, 240, 232, 0.4);
     font-style: italic;
