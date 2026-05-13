@@ -43,13 +43,35 @@
     background: linear-gradient(180deg, #F5F0E8 0%, #FFFFFF 50%, #F5F0E8 100%);
 }
 
-[data-theme="light"] .stars-bg,
+[data-theme="light"] .stars-bg {
+    background: linear-gradient(180deg,
+        #E8F4FD 0%,
+        #F5F0E8 30%,
+        #FFFFFF 60%,
+        #E8F0E0 100%);
+}
+
 [data-theme="light"] .lizard-stars-bg {
-    display: none;
+    background: linear-gradient(180deg,
+        #E8F4FD 0%,
+        #F5F0E8 30%,
+        #FFFFFF 60%,
+        #E8F0E0 100%);
 }
 
 [data-theme="light"] .sakura-bg {
-    display: none;
+    display: block;
+    background: linear-gradient(180deg,
+        #D4E8F0 0%,
+        #F0E8E0 25%,
+        #F5E8D8 50%,
+        #E8D8C8 75%,
+        #D8C8B0 100%);
+}
+
+[data-theme="light"] .stars-bg,
+[data-theme="light"] .lizard-stars-bg {
+    display: block;
 }
 
 * {
