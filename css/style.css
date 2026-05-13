@@ -43,12 +43,44 @@
     background: linear-gradient(180deg, #F5F0E8 0%, #FFFFFF 50%, #F5F0E8 100%);
 }
 
-[data-theme="light"] .stars-bg {
+[data-theme="light"].page-cart .stars-bg {
     background: linear-gradient(180deg,
-        #E8F4FD 0%,
-        #F5F0E8 30%,
-        #FFFFFF 60%,
-        #E8F0E0 100%);
+        #4A3728 0%,
+        #6B4E3D 15%,
+        #8B5E3C 30%,
+        #A67C52 50%,
+        #C9A962 70%,
+        #D4AF37 100%);
+}
+
+[data-theme="light"].page-account .stars-bg {
+    background: linear-gradient(180deg,
+        #F5E6A3 0%,
+        #F5D76E 20%,
+        #E8C34A 40%,
+        #D4A84B 60%,
+        #C49A3D 80%,
+        #B8860B 100%);
+}
+
+[data-theme="light"].page-search .stars-bg {
+    background: linear-gradient(180deg,
+        #4A6FA5 0%,
+        #6B8FC5 15%,
+        #E8D68A 35%,
+        #D4B84A 50%,
+        #C9A020 70%,
+        #8B7355 100%);
+}
+
+[data-theme="light"].page-landing .lizard-stars-bg {
+    background: linear-gradient(180deg,
+        #F5E6E6 0%,
+        #F5D4D4 20%,
+        #FAF0F0 40%,
+        #E8F0F5 60%,
+        #F5F8FA 80%,
+        #FFFFFF 100%);
 }
 
 [data-theme="light"] .lizard-stars-bg {
