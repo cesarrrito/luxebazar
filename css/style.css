@@ -25,18 +25,31 @@
 }
 
 [data-theme="light"] {
-    --gold-primary: #8B7355;
+    --gold-primary: #9A7B4F;
     --gold-light: #C9A962;
     --gold-dark: #6B5344;
     --navy-deep: #F5F0E8;
-    --navy-dark: #E8E0D4;
-    --navy-medium: #D4CBC0;
+    --navy-dark: #FFFFFF;
+    --navy-medium: #E8E0D4;
     --cream: #1B263B;
-    --white: #0D1B2A;
-    --black: #F5F0E8;
-    --overlay: rgba(245, 240, 232, 0.9);
-    --card-bg: rgba(255, 255, 255, 0.8);
+    --white: #FFFFFF;
+    --black: #1B263B;
+    --overlay: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.9);
     --neon-glow: none;
+}
+
+[data-theme="light"] body {
+    background: linear-gradient(180deg, #F5F0E8 0%, #FFFFFF 50%, #F5F0E8 100%);
+}
+
+[data-theme="light"] .stars-bg,
+[data-theme="light"] .lizard-stars-bg {
+    display: none;
+}
+
+[data-theme="light"] .sakura-bg {
+    display: none;
 }
 
 * {

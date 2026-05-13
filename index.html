@@ -22,6 +22,10 @@
 <body>
     <div class="stars-bg" id="stars-bg"></div>
     <div class="lizard-stars-bg" id="lizard-stars-bg"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer le thème">
+        <span id="theme-icon">☀️</span>
+        <span id="theme-text">Clair</span>
+    </button>
 
     <header class="nav-container">
         <a href="index.html" class="logo" aria-label="Le Lezard - Accueil">LE LEZARD</a>
@@ -562,6 +566,21 @@
         createStars();
         createBackgroundStars();
         createLizardStars();
+
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                icon.textContent = '☀️';
+                text.textContent = 'Clair';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                icon.textContent = '🌙';
+                text.textContent = 'Sombre';
+            }
+        }
 
         let mouseX = 0, mouseY = 0;
         let stars = [];
